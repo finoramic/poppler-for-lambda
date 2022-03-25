@@ -20,7 +20,7 @@
 cd ~/tmp/libs/freetype*
 sed -e "/AUX.*.gxvalid/s@^# @@" \
     -e "/AUX.*.otvalid/s@^# @@" \
-    -i modules.cfg              &&
+    -i modules.cfg
 
 # sed -e 's:.*\(#.*SUBPIXEL.*\) .*:\1:' \
 #     -i include/freetype/config/ftoption.h  &&
