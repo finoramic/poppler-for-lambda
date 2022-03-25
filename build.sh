@@ -15,7 +15,7 @@
 # pushd .
 
 ####################################
-cd ~/tmp/libs/freetype*
+# cd ~/tmp/libs/freetype*
 # sed -e "/AUX.*.gxvalid/s@^# @@" \
 #     -e "/AUX.*.otvalid/s@^# @@" \
 #     -i modules.cfg              &&
@@ -23,9 +23,9 @@ cd ~/tmp/libs/freetype*
 # sed -e 's:.*\(#.*SUBPIXEL.*\) .*:\1:' \
 #     -i include/freetype/config/ftoption.h  &&
 
-./configure --prefix=/home/ec2-user/tmp/usr --disable-static &&
-make
-make install 
+# ./configure --prefix=/home/ec2-user/tmp/usr --disable-static &&
+# make
+# make install 
 
 # ####################################
 # cd ~/tmp/libs/libxml*
@@ -48,15 +48,15 @@ make install
 # make install
 
 # ####################################
-# cd ~/tmp/libs/poppler*
-# PKG_CONFIG_PATH=~/tmp/usr/lib/pkgconfig/:$FONTCONFIG_PKG:$PKG_CONFIG_PATH \
-# ./configure --prefix=/var/task      \
-#             --sysconfdir=/var/task/etc           \
-#             --enable-build-type=release \
-#             --enable-cmyk               \
-#             --enable-xpdf-headers && make
+cd ~/tmp/libs/poppler*
+PKG_CONFIG_PATH=~/tmp/usr/lib/pkgconfig/:$FONTCONFIG_PKG:$PKG_CONFIG_PATH \
+./configure --prefix=/var/task      \
+            --sysconfdir=/var/task/etc           \
+            --enable-build-type=release \
+            --enable-cmyk               \
+            --enable-xpdf-headers && make
 
-# make install DESTDIR="/home/ec2-user/tmp/install"
+make install DESTDIR="/home/ec2-user/tmp/install"
 
 # unset FONTCONFIG_PKG
 # popd
