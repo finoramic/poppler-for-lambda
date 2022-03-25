@@ -17,24 +17,24 @@
 # pushd .
 
 # ####################################
-cd ~/tmp/libs/freetype*
-sed -e "/AUX.*.gxvalid/s@^# @@" \
-    -e "/AUX.*.otvalid/s@^# @@" \
-    -i modules.cfg
+# cd ~/tmp/libs/freetype*
+# sed -e "/AUX.*.gxvalid/s@^# @@" \
+#     -e "/AUX.*.otvalid/s@^# @@" \
+#     -i modules.cfg
 
-# sed -e 's:.*\(#.*SUBPIXEL.*\) .*:\1:' \
-#     -i include/freetype/config/ftoption.h  &&
+# # sed -e 's:.*\(#.*SUBPIXEL.*\) .*:\1:' \
+# #     -i include/freetype/config/ftoption.h  &&
 
-./configure --prefix=/home/ec2-user/tmp/usr --disable-static
-make
-make install 
+# ./configure --prefix=/home/ec2-user/tmp/usr --disable-static
+# make
+# make install 
 
 # ####################################
-# cd ~/tmp/libs/libxml*
-# PKG_CONFIG_PATH=~/tmp/usr/lib/pkgconfig/:$PKG_CONFIG_PATH \
-# ./configure --prefix=/home/ec2-user/tmp/usr --disable-static --with-history &&
-# make
-# make install
+cd ~/tmp/libs/libxml*
+PKG_CONFIG_PATH=~/tmp/usr/lib/pkgconfig/:$PKG_CONFIG_PATH \
+./configure --prefix=/home/ec2-user/tmp/usr --disable-static --with-history --with-sax1 &&
+make
+make install
 
 # ####################################
 # cd ~/tmp/libs/fontconfig*
