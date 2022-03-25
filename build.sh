@@ -2,7 +2,7 @@
 
 sudo yum -y groupinstall "Development Tools"
 
-sudo yum -i install libuuid-devel util-linux libtool gperf openssl-devel openssl-libs
+sudo yum -y install libuuid-devel util-linux libtool gperf openssl-devel openssl-libs
 
 mkdir -p ~/tmp/{usr,etc,var,libs,install,downloads,tar}
 
