@@ -48,7 +48,7 @@
 # make install
 
 # ####################################
-cd ~/tmp/libs/poppler*
+cd ~/tmp/libs/poppler-22*
 PKG_CONFIG_PATH=~/tmp/usr/lib/pkgconfig/:$FONTCONFIG_PKG:$PKG_CONFIG_PATH \
 ./configure --prefix=/var/task      \
             --sysconfdir=/var/task/etc           \
