@@ -12,16 +12,16 @@
 #          https://poppler.freedesktop.org/poppler-data-0.4.11.tar.gz \
 # && ls ~/tmp/downloads/*.tar.* | xargs -i tar xf {} -C ~/tmp/libs/
 
-pushd .
+# pushd .
 
 ####################################
 cd ~/tmp/libs/freetype*
-sed -e "/AUX.*.gxvalid/s@^# @@" \
-    -e "/AUX.*.otvalid/s@^# @@" \
-    -i modules.cfg              &&
+# sed -e "/AUX.*.gxvalid/s@^# @@" \
+#     -e "/AUX.*.otvalid/s@^# @@" \
+#     -i modules.cfg              &&
 
-sed -e 's:.*\(#.*SUBPIXEL.*\) .*:\1:' \
-    -i include/freetype/config/ftoption.h  &&
+# sed -e 's:.*\(#.*SUBPIXEL.*\) .*:\1:' \
+#     -i include/freetype/config/ftoption.h  &&
 
 ./configure --prefix=/home/ec2-user/tmp/usr --disable-static &&
 make
