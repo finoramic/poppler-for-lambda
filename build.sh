@@ -26,7 +26,6 @@ sed -e "/AUX.*.gxvalid/s@^# @@" \
 #     -i include/freetype/config/ftoption.h  &&
 
 ./configure --prefix=/home/ec2-user/tmp/usr --disable-static
- &&
 make
 make install 
 
