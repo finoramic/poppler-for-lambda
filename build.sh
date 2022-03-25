@@ -45,6 +45,7 @@ PKG_CONFIG_PATH=~/tmp/usr/lib/pkgconfig/:$PKG_CONFIG_PATH
             --sysconfdir=/home/ec2-user/tmp/etc    \
             --localstatedir=/var \
             --disable-docs       \
+            --enable-libxml2     \
             FREETYPE_CFLAGS=-I~/tmp/usr/include/freetype2 FREETYPE_LIBS="-L~/tmp/usr/lib -lfreetype" \
             LIBXML2_CFLAGS=-I~/tmp/usr/include/libxml2 LIBXML2_LIBS="-L~/tmp/usr/lib -llibxml2"
 
