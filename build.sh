@@ -47,11 +47,18 @@ PKG_CONFIG_PATH=~/tmp/usr/lib/pkgconfig/:$PKG_CONFIG_PATH
             --disable-docs       \
             --enable-libxml2     \
             FREETYPE_CFLAGS=-I/home/ec2-user/tmp/usr/include/freetype2 FREETYPE_LIBS="-L/home/ec2-user/tmp/usr/lib -lfreetype" \
-            LIBXML2_CFLAGS=-I/home/ec2-user/tmp/usr/include/libxml2 LIBXML2_LIBS="-L/home/ec2-user/tmp/usr/lib -llibxml2" \
-            LDFLAGS="-L/home/ec2-user/tmp/usr/lib -llibxml2"
+            LIBXML2_CFLAGS=-I/home/ec2-user/tmp/usr/include/libxml2 LIBXML2_LIBS="-L/home/ec2-user/tmp/usr/lib -lxml2"
 make
 make install
 
+
+
+cmake \
+    -DFONTCONFIG_INCLUDE_DIR=-I/home/ec2-user/tmp/usr/include/fontconfig \
+    -DFONTCONFIG_LIBRARIES="-L/home/ec2-user/tmp/usr/lib -lfontconfig" \
+    -DJPEG_LIBRARY=-L/home/ec2-user/tmp/usr/lib -lopenjp2 \
+    -DJPEG_INCLUDE_DIR="-I/home/ec2-user/tmp/usr/include" \
+    ..
 # # ####################################
 # cd ~/tmp/libs/poppler-22*
 # PKG_CONFIG_PATH=~/tmp/usr/lib/pkgconfig/:$FONTCONFIG_PKG:$PKG_CONFIG_PATH \
