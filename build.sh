@@ -28,22 +28,22 @@ set -e
 
 
 # ####################################
-cd ~/tmp/libs/freetype*
-sed -ri "s:.*(AUX_MODULES.*valid):\1:" modules.cfg &&
+# cd ~/tmp/libs/freetype*
+# sed -ri "s:.*(AUX_MODULES.*valid):\1:" modules.cfg &&
 
-sed -r "s:.*(#.*SUBPIXEL_RENDERING) .*:\1:" \
-    -i include/freetype/config/ftoption.h  &&
+# sed -r "s:.*(#.*SUBPIXEL_RENDERING) .*:\1:" \
+#     -i include/freetype/config/ftoption.h  &&
 
-./configure --prefix=/home/ec2-user/tmp/usr --disable-static
-make
-make install 
+# ./configure --prefix=/home/ec2-user/tmp/usr --disable-static
+# make
+# make install 
 
 # ####################################
-# cd ~/tmp/libs/libxml*
-# PKG_CONFIG_PATH=~/tmp/usr/lib/pkgconfig/:$PKG_CONFIG_PATH \
-# ./configure --prefix=/home/ec2-user/tmp/usr --disable-static --with-history --without-python
-# make
-# make install
+cd ~/tmp/libs/libxml*
+PKG_CONFIG_PATH=~/tmp/usr/lib/pkgconfig/:$PKG_CONFIG_PATH \
+./configure --prefix=/home/ec2-user/tmp/usr --disable-static --with-history --without-python
+make
+make install
 
 # ####################################
 # cd ~/tmp/libs/fontconfig*
