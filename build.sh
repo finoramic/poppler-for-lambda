@@ -73,6 +73,7 @@ cmake .. -DCMAKE_BUILD_TYPE=Release   \
        -DENABLE_LIBOPENJPEG=none  \
        -DENABLE_CMS=none  \
        -DENABLE_DCTDECODER=none \
+       -DENABLE_BOOST=OFF \
 && make &&
 make install DESTDIR="/home/ec2-user/tmp/install"
 
