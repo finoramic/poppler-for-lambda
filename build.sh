@@ -54,11 +54,19 @@ make install
 
 
 cmake \
-    -DFONTCONFIG_INCLUDE_DIR=-I/home/ec2-user/tmp/usr/include/fontconfig \
+    -DFONTCONFIG_INCLUDE_DIR=-I/home/ec2-user/tmp/usr/include \
     -DFONTCONFIG_LIBRARIES="-L/home/ec2-user/tmp/usr/lib -lfontconfig" \
-    -DJPEG_LIBRARY=-L/home/ec2-user/tmp/usr/lib -lopenjp2 \
-    -DJPEG_INCLUDE_DIR="-I/home/ec2-user/tmp/usr/include" \
+    -DCMAKE_MODULE_PATH=/home/ec2-user/tmp/usr/lib/pkgconfig \
+    -DCMAKE_PREFIX_PATH=/home/ec2-user/tmp/usr/lib/pkgconfig \
+    -DCMAKE_INCLUDE_PATH=/home/ec2-user/tmp/usr/include/fontconfig \
+    -DOpenJPEG_DIR="/home/ec2-user/tmp/usr/lib/openjpeg-2.4" \
+    -DENABLE_BOOST=OFF \
     ..
+
+
+    -DJPEG_LIBRARY="-L/home/ec2-user/tmp/usr/lib -lopenjpeg-2.4" \
+    -DJPEG_INCLUDE_DIR="-I/home/ec2-user/tmp/usr/include" \
+
 # # ####################################
 # cd ~/tmp/libs/poppler-22*
 # PKG_CONFIG_PATH=~/tmp/usr/lib/pkgconfig/:$FONTCONFIG_PKG:$PKG_CONFIG_PATH \
