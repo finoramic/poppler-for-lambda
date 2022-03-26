@@ -46,8 +46,9 @@ PKG_CONFIG_PATH=~/tmp/usr/lib/pkgconfig/:$PKG_CONFIG_PATH
             --localstatedir=/var \
             --disable-docs       \
             --enable-libxml2     \
-            FREETYPE_CFLAGS=-I~/tmp/usr/include/freetype2 FREETYPE_LIBS="-L~/tmp/usr/lib -lfreetype" \
-            LIBXML2_CFLAGS=-I~/tmp/usr/include/libxml2 LIBXML2_LIBS="-L~/tmp/usr/lib -llibxml2"
+            FREETYPE_CFLAGS=-I/home/ec2-user/tmp/usr/include/freetype2 FREETYPE_LIBS="-L/home/ec2-user/tmp/usr/lib -lfreetype" \
+            LIBXML2_CFLAGS=-I/home/ec2-user/tmp/usr/include/libxml2 LIBXML2_LIBS="-L/home/ec2-user/tmp/usr/lib -llibxml2" \
+            LDFLAGS="-L/home/ec2-user/tmp/usr/lib -llibxml2"
 make
 make install
 
