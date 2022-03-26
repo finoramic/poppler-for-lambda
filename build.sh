@@ -3,7 +3,7 @@
 set -e
 
 # sudo yum -y groupinstall "Development Tools"
-# sudo yum -y install gperf zlib-devel
+# sudo yum -y install gperf zlib-devel libjpeg-turbo-devel boost-devel
 
 # mkdir -p ~/tmp/{usr,etc,var,libs,install,downloads,tar}
 
@@ -12,7 +12,7 @@ set -e
 #          http://www.freedesktop.org/software/fontconfig/release/fontconfig-2.12.6.tar.bz2 \
 #          https://cmake.org/files/v3.10/cmake-3.10.1.tar.gz \
 #          http://xmlsoft.org/sources/libxml2-2.9.7.tar.gz \
-#          https://poppler.freedesktop.org/poppler-22.03.0.tar.xz \
+#          https://poppler.freedesktop.org/poppler-21.06.0.tar.xz \
 #          https://poppler.freedesktop.org/poppler-data-0.4.8.tar.gz \
 # && ls ~/tmp/downloads/*.tar.* | xargs -i tar xf {} -C ~/tmp/libs/
 
@@ -59,7 +59,7 @@ export FONTCONFIG_PKG=`pwd`
 # make install
 
 # ####################################
-cd ~/tmp/libs/poppler-22*
+cd ~/tmp/libs/poppler-21*
 
 mkdir -p build
 cd build
