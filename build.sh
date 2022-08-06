@@ -8,12 +8,12 @@ sudo yum -y install gperf zlib-devel libjpeg-turbo-devel boost-devel
 mkdir -p ~/tmp/{usr,etc,var,libs,install,downloads,tar}
 
 wget -P ~/tmp/downloads \
-          http://downloads.sourceforge.net/freetype/freetype-2.10.4.tar.bz2 \
-          http://www.freedesktop.org/software/fontconfig/release/fontconfig-2.13.1.tar.bz2 \
-          https://cmake.org/files/v3.20/cmake-3.20.1.tar.gz \
-          http://xmlsoft.org/sources/libxml2-2.9.7.tar.gz \
-          https://poppler.freedesktop.org/poppler-21.03.0.tar.xz \
-          https://poppler.freedesktop.org/poppler-data-0.4.10.tar.gz \
+          https://downloads.sourceforge.net/freetype/freetype-2.12.1.tar.xz \
+          https://www.freedesktop.org/software/fontconfig/release/fontconfig-2.14.0.tar.xz \
+          https://cmake.org/files/v3.23/cmake-3.23.3.tar.gz \
+          https://download.gnome.org/sources/libxml2/2.9/libxml2-2.9.14.tar.xz \
+          https://poppler.freedesktop.org/poppler-22.08.0.tar.xz \
+          https://poppler.freedesktop.org/poppler-data-0.4.11.tar.gz \
 && ls ~/tmp/downloads/*.tar.* | xargs -i tar xf {} -C ~/tmp/libs/
 
 pushd .
