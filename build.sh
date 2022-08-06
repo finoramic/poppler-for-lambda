@@ -19,24 +19,24 @@ set -e
 # pushd .
 
 # ####################################
-cd ~/tmp/libs/cmake*
-./bootstrap
-make
-sudo make install
-
-# ####################################
-
-
-# ####################################
-# cd ~/tmp/libs/freetype*
-# sed -ri "s:.*(AUX_MODULES.*valid):\1:" modules.cfg &&
-
-# sed -r "s:.*(#.*SUBPIXEL_RENDERING) .*:\1:" \
-#     -i include/freetype/config/ftoption.h  &&
-
-# ./configure --prefix=/home/ec2-user/tmp/usr --disable-static
+# cd ~/tmp/libs/cmake*
+# ./bootstrap
 # make
-# make install 
+# sudo make install
+
+# ####################################
+
+
+####################################
+cd ~/tmp/libs/freetype*
+sed -ri "s:.*(AUX_MODULES.*valid):\1:" modules.cfg &&
+
+sed -r "s:.*(#.*SUBPIXEL_RENDERING) .*:\1:" \
+    -i include/freetype/config/ftoption.h  &&
+
+./configure --prefix=/home/ec2-user/tmp/usr --disable-static
+make
+make install 
 
 # ####################################
 # cd ~/tmp/libs/libxml*
