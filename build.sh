@@ -45,37 +45,37 @@ set -e
 # make
 # make install
 
-####################################
-cd ~/tmp/libs/fontconfig*
-export FONTCONFIG_PKG=`pwd`
-
-PKG_CONFIG_PATH=~/tmp/usr/lib/pkgconfig/:$PKG_CONFIG_PATH \
-./configure --prefix=/home/ec2-user/tmp/usr        \
-            --sysconfdir=/home/ec2-user/tmp/etc    \
-            --localstatedir=/home/ec2-user/tmp/var \
-            --disable-docs       \
-            --enable-libxml2 
-make
-make install
-
 # ####################################
-# cd ~/tmp/libs/poppler-21*
+# cd ~/tmp/libs/fontconfig*
+# export FONTCONFIG_PKG=`pwd`
 
-# mkdir -p build
-# cd build
-# PKG_CONFIG_PATH=~/tmp/usr/lib/pkgconfig/:$FONTCONFIG_PKG:$PKG_CONFIG_PATH \
-# cmake .. -DCMAKE_BUILD_TYPE=Release   \
-#        -DCMAKE_INSTALL_PREFIX=/home/ec2-user/tmp/usr  \
-#        -DSYSCONFDIR=/var/task/etc \
-#        -DSPLASH_CMYK=ON \
-#        -DTESTDATADIR=$PWD/testfiles \
-#        -DENABLE_XPDF_HEADERS=ON     \
-#        -DENABLE_LIBOPENJPEG=none  \
-#        -DENABLE_CMS=none  \
-#        -DENABLE_DCTDECODER=none \
-#        -DENABLE_BOOST=OFF \
-# && make &&
-# make install DESTDIR="/home/ec2-user/tmp/install"
+# PKG_CONFIG_PATH=~/tmp/usr/lib/pkgconfig/:$PKG_CONFIG_PATH \
+# ./configure --prefix=/home/ec2-user/tmp/usr        \
+#             --sysconfdir=/home/ec2-user/tmp/etc    \
+#             --localstatedir=/home/ec2-user/tmp/var \
+#             --disable-docs       \
+#             --enable-libxml2 
+# make
+# make install
+
+####################################
+cd ~/tmp/libs/poppler-21*
+
+mkdir -p build
+cd build
+PKG_CONFIG_PATH=~/tmp/usr/lib/pkgconfig/:$FONTCONFIG_PKG:$PKG_CONFIG_PATH \
+cmake .. -DCMAKE_BUILD_TYPE=Release   \
+       -DCMAKE_INSTALL_PREFIX=/home/ec2-user/tmp/usr  \
+       -DSYSCONFDIR=/var/task/etc \
+       -DSPLASH_CMYK=ON \
+       -DTESTDATADIR=$PWD/testfiles \
+       -DENABLE_XPDF_HEADERS=ON     \
+       -DENABLE_LIBOPENJPEG=none  \
+       -DENABLE_CMS=none  \
+       -DENABLE_DCTDECODER=none \
+       -DENABLE_BOOST=OFF \
+&& make &&
+make install DESTDIR="/home/ec2-user/tmp/install"
 
 # cd ~/tmp/libs/poppler-data*
 # make prefix=/home/ec2-user/tmp/usr install
