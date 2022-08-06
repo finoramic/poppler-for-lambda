@@ -2,41 +2,41 @@
 
 set -e
 
-sudo yum -y groupinstall "Development Tools"
-sudo yum -y install gperf zlib-devel libjpeg-turbo-devel boost-devel
+# sudo yum -y groupinstall "Development Tools"
+# sudo yum -y install gperf zlib-devel libjpeg-turbo-devel boost-devel
 
-mkdir -p ~/tmp/{usr,etc,var,libs,install,downloads,tar}
+# mkdir -p ~/tmp/{usr,etc,var,libs,install,downloads,tar}
 
-wget -P ~/tmp/downloads \
-          https://downloads.sourceforge.net/freetype/freetype-2.12.1.tar.xz \
-          https://www.freedesktop.org/software/fontconfig/release/fontconfig-2.14.0.tar.xz \
-          https://cmake.org/files/v3.23/cmake-3.23.3.tar.gz \
-          https://download.gnome.org/sources/libxml2/2.9/libxml2-2.9.14.tar.xz \
-          https://poppler.freedesktop.org/poppler-22.08.0.tar.xz \
-          https://poppler.freedesktop.org/poppler-data-0.4.11.tar.gz \
-&& ls ~/tmp/downloads/*.tar.* | xargs -i tar xf {} -C ~/tmp/libs/
+# wget -P ~/tmp/downloads \
+#           https://downloads.sourceforge.net/freetype/freetype-2.12.1.tar.xz \
+#           https://www.freedesktop.org/software/fontconfig/release/fontconfig-2.14.0.tar.xz \
+#           https://cmake.org/files/v3.23/cmake-3.23.3.tar.gz \
+#           https://download.gnome.org/sources/libxml2/2.9/libxml2-2.9.14.tar.xz \
+#           https://poppler.freedesktop.org/poppler-22.08.0.tar.xz \
+#           https://poppler.freedesktop.org/poppler-data-0.4.11.tar.gz \
+# && ls ~/tmp/downloads/*.tar.* | xargs -i tar xf {} -C ~/tmp/libs/
 
-pushd .
+# pushd .
 
-####################################
-cd ~/tmp/libs/cmake*
-./bootstrap
-make
-sudo make install
-
-####################################
-
-
-# ###################################
-# cd ~/tmp/libs/freetype*
-# sed -ri "s:.*(AUX_MODULES.*valid):\1:" modules.cfg &&
-
-# sed -r "s:.*(#.*SUBPIXEL_RENDERING) .*:\1:" \
-#     -i include/freetype/config/ftoption.h  &&
-
-# ./configure --prefix=/home/ec2-user/tmp/usr --disable-static
+# ####################################
+# cd ~/tmp/libs/cmake*
+# ./bootstrap
 # make
-# make install 
+# sudo make install
+
+####################################
+
+
+###################################
+cd ~/tmp/libs/freetype*
+sed -ri "s:.*(AUX_MODULES.*valid):\1:" modules.cfg &&
+
+sed -r "s:.*(#.*SUBPIXEL_RENDERING) .*:\1:" \
+    -i include/freetype/config/ftoption.h  &&
+
+./configure --prefix=/home/ec2-user/tmp/usr --disable-static
+make
+make install 
 
 # ####################################
 # cd ~/tmp/libs/libxml*
