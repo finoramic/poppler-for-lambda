@@ -59,7 +59,7 @@ set -e
 # make install
 
 ####################################
-cd ~/tmp/libs/poppler-21*
+cd ~/tmp/libs/poppler-22*
 
 mkdir -p build
 cd build
