@@ -68,6 +68,7 @@ cmake .. -DCMAKE_BUILD_TYPE=Release   \
        -DCMAKE_INSTALL_PREFIX=/home/ec2-user/tmp/usr  \
        -DSYSCONFDIR=/var/task/etc \
        -DSPLASH_CMYK=ON \
+       -DENABLE_UNSTABLE_API_ABI_HEADERS=ON \
        -DTESTDATADIR=$PWD/testfiles \
        -DENABLE_XPDF_HEADERS=ON     \
        -DENABLE_LIBOPENJPEG=none  \
