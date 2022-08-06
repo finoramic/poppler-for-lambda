@@ -39,24 +39,24 @@ set -e
 # make install 
 
 # ####################################
-cd ~/tmp/libs/libxml*
-PKG_CONFIG_PATH=~/tmp/usr/lib/pkgconfig/:$PKG_CONFIG_PATH \
-./configure --prefix=/home/ec2-user/tmp/usr --disable-static --with-history --without-python
-make
-make install
-
-# ####################################
-# cd ~/tmp/libs/fontconfig*
-# export FONTCONFIG_PKG=`pwd`
-
+# cd ~/tmp/libs/libxml*
 # PKG_CONFIG_PATH=~/tmp/usr/lib/pkgconfig/:$PKG_CONFIG_PATH \
-# ./configure --prefix=/home/ec2-user/tmp/usr        \
-#             --sysconfdir=/home/ec2-user/tmp/etc    \
-#             --localstatedir=/home/ec2-user/tmp/var \
-#             --disable-docs       \
-#             --enable-libxml2 
+# ./configure --prefix=/home/ec2-user/tmp/usr --disable-static --with-history --without-python
 # make
 # make install
+
+####################################
+cd ~/tmp/libs/fontconfig*
+export FONTCONFIG_PKG=`pwd`
+
+PKG_CONFIG_PATH=~/tmp/usr/lib/pkgconfig/:$PKG_CONFIG_PATH \
+./configure --prefix=/home/ec2-user/tmp/usr        \
+            --sysconfdir=/home/ec2-user/tmp/etc    \
+            --localstatedir=/home/ec2-user/tmp/var \
+            --disable-docs       \
+            --enable-libxml2 
+make
+make install
 
 # ####################################
 # cd ~/tmp/libs/poppler-21*
